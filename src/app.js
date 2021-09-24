@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+require("dotenv").config();
 
 const getOperator = require("./controllers/operator.controller");
 const getCountries = require("./controllers/countries.controller");

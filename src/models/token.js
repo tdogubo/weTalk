@@ -1,5 +1,5 @@
 const axios = require("axios");
-require("dotenv").config();
+
 
 async function getToken() {
   try {
