@@ -1,4 +1,5 @@
 const axios = require("axios");
+require("dotenv").config();
 
 async function getToken() {
   try {
@@ -18,7 +19,7 @@ async function getToken() {
     let data = response.data;
     let token = data.access_token;
     let expiry_date = data.expires_in;
-    if (expiry_date === 00000) {
+    if (expiry_date === "00000") {
       getToken();
     }
     return Promise.resolve(token);

@@ -17,7 +17,7 @@ async function getOperator(req, res) {
       url: `https://topups.reloadly.com/operators/auto-detect/phone/${phoneNumber}/countries/${countryisocode}`,
       headers: headers,
     });
-    response = await response.data;
+    response = response.data;
     return res.status(200).json({ data: response });
   } catch (err) {
     return res.status(401).json(err);

@@ -1,5 +1,6 @@
 const axios = require("axios");
 const getToken = require("../models/token");
+require("dotenv").config();
 
 async function paymentStatus(transactionRef) {
   try {
