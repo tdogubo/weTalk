@@ -20,7 +20,7 @@ async function getOperator(req, res) {
     response = response.data;
     return res.status(200).json({ data: response });
   } catch (err) {
-    return res.status(401).json(err);
+    return res.status(400).json(err);
   }
 }
 
