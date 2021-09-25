@@ -13,6 +13,6 @@ app.use(express.json());
 
 app.get("/countries", getCountries);
 app.post("/operator", getOperator);
-app.post("/verify/:id", airtimeTopup);
+app.post("/verify", airtimeTopup);
 
 module.exports = app;

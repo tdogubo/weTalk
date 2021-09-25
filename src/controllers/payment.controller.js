@@ -1,7 +1,6 @@
 const axios = require("axios");
 const getToken = require("../models/token");
 
-
 async function paymentStatus(transactionRef) {
   try {
     let response = await axios({
@@ -20,11 +19,7 @@ async function paymentStatus(transactionRef) {
 }
 
 async function airtimeTopup(req, res) {
-  let transactionRef = req.params;
   try {
-    const status = await paymentStatus(transactionRef);
-    if (!status || status.status === "error") return res.status(401);
-
     let token = await getToken();
 
     let {
@@ -32,11 +27,14 @@ async function airtimeTopup(req, res) {
       amount,
       recipientNumber,
       recipientCountryCode,
+      transactionRef,
     } = req.body;
+    const status = await paymentStatus(transactionRef);
+    if (status.status === "error") return res.sendStatus(400);
     let data = JSON.stringify({
       operatorId: `${operatorId}`,
       amount: `${amount}`,
-      useLocalAmount: false,
+      // useLocalAmount: false,
       recipientPhone: {
         countryCode: `${recipientCountryCode}`,
         number: `${recipientNumber}`,
@@ -45,7 +43,7 @@ async function airtimeTopup(req, res) {
 
     let response = await axios({
       method: "POST",
-      url: "https://topups.reloadly.com/topups",
+      url: "https://topups-sandbox.reloadly.com/topups",
       headers: {
         Authorization: `Bearer ${token}`,
         Accept: "application/com.reloadly.topups-v1+json",

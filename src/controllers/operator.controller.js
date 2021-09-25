@@ -14,7 +14,7 @@ async function getOperator(req, res) {
   try {
     let response = await axios({
       method: "GET",
-      url: `https://topups.reloadly.com/operators/auto-detect/phone/${phoneNumber}/countries/${countryisocode}`,
+      url: `https://topups-sandbox.reloadly.com/operators/auto-detect/phone/${phoneNumber}/countries/${countryisocode}`,
       headers: headers,
     });
     response = response.data;

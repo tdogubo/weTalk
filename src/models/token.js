@@ -13,7 +13,7 @@ async function getToken() {
         client_id: process.env.CLIENT_ID,
         client_secret: process.env.CLIENT_SECRET,
         grant_type: "client_credentials",
-        audience: "https://topups.reloadly.com",
+        audience: "https://topups-sandbox.reloadly.com",
       },
     });
     let data = response.data;

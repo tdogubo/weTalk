@@ -12,6 +12,6 @@ describe("Test POST /verify/:id", () => {
         recipientCountryCode: "NG",
       })
       .expect("Content-Type", /json/)
-      .expect(400);
+      .expect(200);
   });
 });
