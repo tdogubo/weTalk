@@ -14,7 +14,7 @@ __Body__ of request should be in the format 👇🏽👇🏽
 
 ```
 { countryisocode: "recepient's country code",
-phoneNumber: "recepient's phone number" }
+  phoneNumber: "recepient's phone number" }
 ```
    
 
