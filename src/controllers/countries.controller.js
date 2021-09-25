@@ -2,7 +2,7 @@ const axios = require("axios");
 const getToken = require("../models/token");
 
 async function getCountries(req, res) {
-  let token = await getToken();
+  let token = await getToken(); //gets the reloadly authorization token
   
   try {
     let response = await axios({
