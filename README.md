@@ -1,4 +1,4 @@
-# weTalk-API
+# weTalk-API 📲
 
 ## Description
 A mobile top-up API created on Flutterwave and Reloadly APIs.
