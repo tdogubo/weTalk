@@ -34,7 +34,6 @@ async function airtimeTopup(req, res) {
     let data = JSON.stringify({
       operatorId: `${operatorId}`,
       amount: `${amount}`,
-      // useLocalAmount: false,
       recipientPhone: {
         countryCode: `${recipientCountryCode}`,
         number: `${recipientNumber}`,
