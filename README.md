@@ -37,5 +37,5 @@ __Format__ for body 👇🏽👇🏽
 In the event that any endpoint does not work; the API responds with a `400 Bad Request` error code.
 
 
-## Postman Documentation
+## Postman Documentation Link:
 > https://documenter.getpostman.com/view/14420044/UUxwBUHv
