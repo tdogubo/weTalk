@@ -35,3 +35,7 @@ __Format__ for body 👇🏽👇🏽
 > Expected Response : `200 OK`
 
 In the event that any endpoint does not work; the API responds with a `400 Bad Request` error code.
+
+
+## Postman Documentation
+> https://documenter.getpostman.com/view/14420044/UUxwBUHv
