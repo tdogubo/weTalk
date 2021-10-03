@@ -34,4 +34,4 @@ __Format__ for body 👇🏽👇🏽
 ```
 > Expected Response : `200 OK`
 
-In the event that any endpoint does not work; the API responds with a `400` status error code.
+In the event that any endpoint does not work; the API responds with a `400 Bad Request` error code.
