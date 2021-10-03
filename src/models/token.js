@@ -1,7 +1,7 @@
 const axios = require("axios");
 
-
 async function getToken() {
+  //get access token from reloadly
   try {
     let response = await axios({
       method: "POST",
@@ -17,10 +17,10 @@ async function getToken() {
       },
     });
     let data = response.data;
-    let token = data.access_token;
+    let token = data.access_token; //extract the access token from the data
     let expiry_date = data.expires_in;
     if (expiry_date === "00000") {
-      getToken();
+      getToken(); //check expiration of access token and reruns fucntion in case of expiration
     }
     return Promise.resolve(token);
   } catch (error) {

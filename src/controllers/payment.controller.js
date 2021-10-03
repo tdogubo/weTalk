@@ -2,6 +2,7 @@ const axios = require("axios");
 const getToken = require("../models/token");
 
 async function paymentStatus(transactionRef) {
+  //checks if transaction is successful on flutterwave
   try {
     let response = await axios({
       method: "GET",
@@ -20,7 +21,7 @@ async function paymentStatus(transactionRef) {
 
 async function airtimeTopup(req, res) {
   try {
-    let token = await getToken();
+    let token = await getToken(); //gets the reloadly authorization token
 
     let {
       operatorId,
@@ -29,8 +30,8 @@ async function airtimeTopup(req, res) {
       recipientCountryCode,
       transactionRef,
     } = req.body;
-    const status = await paymentStatus(transactionRef);
-    if (status.status === "error") return res.sendStatus(400);
+    const status = await paymentStatus(transactionRef); //flutterwave payment status check
+    if (status.status === "error") return res.sendStatus(400); //checks if the transaction fails before proceeding
     let data = JSON.stringify({
       operatorId: `${operatorId}`,
       amount: `${amount}`,
@@ -42,7 +43,7 @@ async function airtimeTopup(req, res) {
 
     let response = await axios({
       method: "POST",
-      url: "https://topups-sandbox.reloadly.com/topups",
+      url: "https://topups-sandbox.reloadly.com/topups", //calls reloadly's topups endpoint
       headers: {
         Authorization: `Bearer ${token}`,
         Accept: "application/com.reloadly.topups-v1+json",
