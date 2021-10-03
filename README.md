@@ -23,7 +23,7 @@ __Body__ of request should be in the format 👇🏽👇🏽
 
 
 #### `/verify`
-A `POST` endpoint for verifying payment from Flutterwave and airtime top-up from Reloadly.
+A `POST` endpoint which verifies the user's payment via Flutterwave's verify endpoint. If the verification is successful, airtime top-up endpoint on Reloadly runs.
 __Format__ for body 👇🏽👇🏽
 ```
 { operatorId: "341",
@@ -33,3 +33,5 @@ __Format__ for body 👇🏽👇🏽
   transactionRef: "2509533"}
 ```
 > Expected Response : `200 OK`
+
+In the event that any endpoint does not work; the API responds with a `400` status error code.
