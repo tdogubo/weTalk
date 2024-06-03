@@ -28,7 +28,7 @@ __Format__ for body 👇🏽👇🏽
 ```
 { operatorId: "341",
   amount: "100",
-  recipientNumber: "08102944117",
+  recipientNumber: "+234xxxxxxxx",
   recipientCountryCode: "NG",
   transactionRef: "2509533"}
 ```
